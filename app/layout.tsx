@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { Analytics } from "@/components/analytics/Analytics";
 import { getSiteContent } from "@/content/index";
 import { createSiteMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang={getSiteContent("es").meta.language}
       className={`${fraunces.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

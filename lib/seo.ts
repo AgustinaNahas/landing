@@ -68,7 +68,10 @@ export function createSiteMetadata(site: SiteContent, locale: Locale): Metadata 
       images: shareImage,
     },
     icons: {
-      icon: "/favicon.ico",
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
+        { url: "/image.png", type: "image/png", sizes: "534x534" },
+      ],
       apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.webmanifest",
