@@ -1,0 +1,11 @@
+.wrapper {
+  color: var(--accent);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

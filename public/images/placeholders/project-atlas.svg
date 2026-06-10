@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#F7F4EE"/>
+  <rect x="0.5" y="0.5" width="1199" height="674" stroke="#7B766E" stroke-opacity="0.35"/>
+  <rect x="60" y="60" width="1080" height="555" stroke="#466C8C" stroke-opacity="0.25"/>
+  <polygon points="560,300 560,240 640,270 720,240 720,360 640,330 560,360" fill="#466C8C" fill-opacity="0.12" stroke="#466C8C" stroke-opacity="0.35"/>
+  <circle cx="640" cy="300" r="36" stroke="#C96F4B" stroke-opacity="0.5" fill="none"/>
+  <polygon points="632,280 632,320 660,300" fill="#C96F4B" fill-opacity="0.55"/>
+  <text x="600" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#202020">Video del proyecto</text>
+  <text x="600" y="506" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" letter-spacing="0.12em" fill="#7B766E">ATLAS DE DATOS PÚBLICOS · autoplay al entrar en pantalla</text>
+  <text x="600" y="532" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7B766E">public/videos/atlas-datos-publicos.mp4</text>
+</svg>

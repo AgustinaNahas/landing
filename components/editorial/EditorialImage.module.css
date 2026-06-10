@@ -1,0 +1,50 @@
+.figure {
+  margin-block: var(--space-xl);
+}
+
+.imageWrap {
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.placeholder {
+  aspect-ratio: 820 / 400;
+  color: var(--border-medium);
+  background: transparent;
+}
+
+.placeholderSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.placeholderText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  fill: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.caption {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 32rem;
+}
+
+.captionRule {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.6;
+  margin-bottom: var(--space-xs);
+}

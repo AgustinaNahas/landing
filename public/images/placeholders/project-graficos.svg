@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#F7F4EE"/>
+  <rect x="0.5" y="0.5" width="1199" height="674" stroke="#7B766E" stroke-opacity="0.35"/>
+  <rect x="60" y="60" width="1080" height="555" stroke="#466C8C" stroke-opacity="0.25"/>
+  <path d="M140 420 C240 320, 340 380, 440 280 S640 240, 740 300 S940 200, 1060 260" stroke="#C9A54E" stroke-opacity="0.35" fill="none"/>
+  <path d="M140 460 C260 400, 360 440, 480 360 S680 340, 820 380 S980 300, 1060 340" stroke="#466C8C" stroke-opacity="0.25" fill="none"/>
+  <circle cx="600" cy="300" r="36" stroke="#C96F4B" stroke-opacity="0.5" fill="none"/>
+  <polygon points="592,280 592,320 620,300" fill="#C96F4B" fill-opacity="0.55"/>
+  <text x="600" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#202020">Video del proyecto</text>
+  <text x="600" y="506" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" letter-spacing="0.1em" fill="#7B766E">GRÁFICOS QUE ENSEÑAN · autoplay al entrar en pantalla</text>
+  <text x="600" y="532" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#7B766E">public/videos/visualizacion-divulgacion.mp4</text>
+</svg>

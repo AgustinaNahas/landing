@@ -1,0 +1,63 @@
+.section {
+  padding-block: var(--space-section);
+}
+
+.title {
+  margin-bottom: var(--space-sm);
+}
+
+.intro {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 30rem;
+  margin-bottom: var(--space-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.tags {
+  margin-bottom: var(--space-md);
+}
+
+.divider {
+  margin-block: var(--space-xl);
+}
+
+.divider::before {
+  max-width: 6rem;
+}
+
+.interestsLabel {
+  margin-bottom: var(--space-lg);
+}
+
+.interestsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.interestItem {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.interestItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.interestTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text);
+}
+
+.interestDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 32rem;
+}

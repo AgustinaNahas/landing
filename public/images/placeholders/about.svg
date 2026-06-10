@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" fill="none">
+  <rect width="1200" height="560" fill="#F7F4EE"/>
+  <rect x="0.5" y="0.5" width="1199" height="559" stroke="#7B766E" stroke-opacity="0.35"/>
+  <line x1="0" y1="0" x2="1200" y2="560" stroke="#7B766E" stroke-opacity="0.12"/>
+  <line x1="1200" y1="0" x2="0" y2="560" stroke="#7B766E" stroke-opacity="0.12"/>
+  <rect x="80" y="80" width="1040" height="400" stroke="#466C8C" stroke-opacity="0.2" stroke-dasharray="6 8"/>
+  <text x="600" y="268" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#202020">Fotografía editorial</text>
+  <text x="600" y="304" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" letter-spacing="0.14em" fill="#7B766E">SOBRE MÍ · public/images/about.jpg</text>
+</svg>

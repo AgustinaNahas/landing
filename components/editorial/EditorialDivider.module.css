@@ -1,0 +1,24 @@
+.divider {
+  margin-block: var(--space-xl);
+}
+
+.line::before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 12rem;
+  height: 1px;
+  background: var(--border-medium);
+}
+
+.dots {
+  text-align: left;
+  font-size: var(--text-sm);
+  letter-spacing: 0.35em;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.dots::before {
+  content: "· · · · · ·";
+}

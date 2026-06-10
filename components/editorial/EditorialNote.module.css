@@ -1,0 +1,40 @@
+.note {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+.rule {
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--border-medium);
+  margin-bottom: var(--space-xs);
+}
+
+.text {
+  font-style: italic;
+}
+
+@media (min-width: 960px) {
+  .note {
+    padding-top: 0.25rem;
+  }
+}
+
+.noteInline {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--border-light);
+}
+
+@media (min-width: 960px) {
+  .noteInline {
+    margin-top: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+}
