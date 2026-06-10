@@ -59,10 +59,9 @@ export const site: SiteContent = {
     name: "Agustina Nahas",
     role:
       "Desarrolladora desde 2016. Trabajo con Node, Next y React, y me adapto a lo que haga falta.",
-    tagline:
-      "De chiquita quería ser escritora. Como no se me daba la ficción, resolví empezar a escribir código.",
+    tagline: "",
     intention:
-      "Siempre hay una historia buscando ser contada.",
+      "Siempre hay una historia escondida en los datos.",
     avatar: {
       src: "/perfil.jpg",
       alt: "Agustina Nahas sonriendo, retrato en un balcón",
@@ -71,22 +70,15 @@ export const site: SiteContent = {
     },
   },
 
-  manifesto: {
-    quote:
-      "Las historias que más me gusta contar son aquellas que siento que pueden tener un impacto social.",
-    body:
-      "Me interesan la desigualdad (género, clase, capacidad), el acceso a la información, la sustentabilidad, la planificación urbana y la movilidad, entre otros. Creo que contar una historia implica, a veces, construir todo el sistema que nos permita contarla.",
-  },
-
   editorialNotes: [
     {
       id: "degree",
-      text: "Ingeniería en Sistemas de Información · FRBA UTN · casi recibida",
+      text: "Desarrolladora frontend. Fan de las visualizaciones de datos y los scrollytellings.",
       attachTo: "about",
     },
     {
-      id: "galileo",
-      text: "Galileo · 8 años · se autopercibe gatito bebé",
+      id: "experience",
+      text: "Algunos lugares por los que pasé y marcaron mi experiencia profesional.",
       attachTo: "experience",
     },
   ],
@@ -111,7 +103,7 @@ export const site: SiteContent = {
     contact: "Contacto",
     contactCta: "Escribime →",
     visitProject: "Visitar proyecto",
-    viewAllInCollection: "Ver todos en Notion",
+    viewAllInCollection: "Conocer más",
     projectSections: {
       context: "Contexto",
       problem: "Problema",
@@ -146,22 +138,22 @@ export const site: SiteContent = {
 
   experience: [
     {
-      period: "Actualidad",
+      period: "2022 - actualidad",
       role: "Desarrolladora",
       organization: "Sociopúblico",
       description:
         "Trabajo en una agencia de comunicación que busca mejorar la vida pública. Desarrollo proyectos digitales donde la información, la narrativa y el impacto social se cruzan.",
     },
     {
-      period: "4 años",
+      period: "2019 - 2023",
       role: "Desarrolladora",
       organization: "El Gato y La Caja",
       description:
         "Participé de proyectos de muchísimo impacto en un equipo que me marcó. Pude construir iniciativas que me conmovieron y me movilizaron — y que tienen que ver con la persona que soy ahora.",
     },
     {
-      period: "Primeros pasos",
-      role: "Desarrolladora",
+      period: "2017 - 2020",
+      role: "Desarrolladora fullstack",
       organization: "Desarrollo de Soluciones Informáticas · FRBA UTN",
       description:
         "Aprendí muchísimo construyendo sistemas internos para la facultad: becas, empadronamiento estudiantil, toma de asistencia, entre otros. Ahí empecé a entender que el código también es una forma de contar — y de servir.",
@@ -176,7 +168,8 @@ export const site: SiteContent = {
       subtitle: "Agencia de comunicación · trabajo actual",
       intro:
         "Proyectos digitales donde la información, la narrativa y la vida pública se cruzan.",
-      projects: [
+      externalUrl: "https://www.sociopublico.com/",
+        projects: [
         {
           slug: "child-atlas",
           title: "Child Atlas",
@@ -184,8 +177,6 @@ export const site: SiteContent = {
           subtitle: "Portal de datos sobre la situación mundial de niños y niñas para Save The Children.",
           context:
             "Child Atlas es un portal de datos sobre la situación mundial de niños y niñas para Save The Children. Es un proyecto que busca informar a la sociedad sobre la situación de los niños y niñas en el mundo y promover la protección de sus derechos.",
-          approach:
-            "Portal construido con React, Next.js y D3.js. El portal es una herramienta que permite a los usuarios explorar los datos de la situación mundial de niños y niñas para Save The Children.",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/child-atlas.webm",
@@ -198,7 +189,6 @@ export const site: SiteContent = {
           url: "https://fractalargentina.org/herramienta/mapa-de-accesibilidad-a-las-escuelas-argentinas/",
           subtitle: "Mapa interactivo de accesibilidad escolar en Argentina.  ",
           context: "Escuelas es un mapa interactivo de accesibilidad escolar en Argentina. Es un proyecto que busca informar a la sociedad sobre la accesibilidad de las escuelas en el país y promover la mejora de la accesibilidad.",
-          approach: "Mapa construido con React, Next.js y Mapbox. El mapa es una herramienta que permite a los usuarios explorar los datos de la accesibilidad de las escuelas en el país.",
           technologies: ["React", "Next.js", "Mapbox"],
           media: projectVideo(
             "/videos/sociopublico/escuelas.webm",
@@ -211,7 +201,6 @@ export const site: SiteContent = {
           url: "https://gwlvoices.org/",
           subtitle: "Scrollytelling interactivo sobre el rol de las mujeres en organizacione multilaterales.",
           context: "Scrollytelling interactivo sobre el rol de las mujeres en organizacione multilaterales para la organización GWL. Es un proyecto que busca informar a la sociedad sobre el rol de las mujeres en las organizaciones multilaterales y promover la igualdad de género.",
-          approach: "Scrollytelling construido con React, Next.js y D3.js. El scrollytelling es una herramienta que permite a los usuarios explorar la historia de las mujeres en las organizaciones multilaterales.",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/gwl.webm",
@@ -223,7 +212,6 @@ export const site: SiteContent = {
           title: "Nido",
           subtitle: "Scrollytelling interactivo sobre el índice NIDO.",
           context: "Nido es un scrollytelling interactivo sobre el índice NIDO. Es un proyecto que busca informar a la sociedad sobre el índice NIDO y promover la mejora de la educación en el país.",
-          approach: "Enfoque y tu aporte al proyecto.",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/nido.webm",
@@ -238,6 +226,7 @@ export const site: SiteContent = {
       subtitle: "Cuatro años de proyectos con impacto",
       intro:
         "Animaciones, visualizaciones, mapas y scrollytellings — historias con significado social.",
+      externalUrl: "https://elgatoylacaja.com/",
       projects: [
         {
           slug: "cet",
@@ -246,8 +235,6 @@ export const site: SiteContent = {
           subtitle: "Scrollytelling interactivo sobre mujeres en el mundo de la tecnología.",
           context:
             "Una de las piezas que más disfrutaste en El Gato y La Caja — qué historia contaba y por qué te marcó.",
-          approach:
-            "Cómo la construiste: scrollytelling, mapa, visualización interactiva, etc.",
           technologies: ["D3", "Scrollama", "React"],
           media: projectVideo(
             "/videos/eglc/cet.webm",
@@ -260,7 +247,6 @@ export const site: SiteContent = {
           url: "https://leyes-y-sombras.clacai.org/",
           subtitle: "Completar en content/site.ts",
           context: "Contexto del proyecto CLACAI.",
-          approach: "Tu enfoque técnico y narrativo.",
           technologies: ["Mapbox", "React", "Storytelling"],
           media: projectVideo(
             "/videos/eglc/clacai.webm",
@@ -273,7 +259,6 @@ export const site: SiteContent = {
           url: "https://complejidadeconomicaverde.fund.ar/",
           subtitle: "Completar en content/site.ts",
           context: "Contexto del proyecto Fundar.",
-          approach: "Qué construiste y qué aprendiste.",
           technologies: ["D3", "Node", "Visualización"],
           media: projectVideo(
             "/videos/eglc/fundar.webm",
@@ -286,7 +271,6 @@ export const site: SiteContent = {
           url: "https://lapoderosa.elgatoylacaja.com/",
           subtitle: "Scrollytelling interactivo sobre accesos a servicios en barrios vulnerables.",
           context: "Contexto del proyecto La Poderosa.",
-          approach: "Tu enfoque técnico y narrativo.",
           technologies: ["React", "Scrollama", "Storytelling"],
           media: projectVideo(
             "/videos/eglc/lapoderosa.webm",
@@ -308,7 +292,6 @@ export const site: SiteContent = {
           url: "https://desupernova.github.io/ldc-graduates/",
           subtitle: "Completar en content/site.ts",
           context: "Contexto del proyecto.",
-          approach: "Tu enfoque y aporte.",
           technologies: ["React", "Node"],
           media: projectVideo(
             "/videos/otros/ldc.webm",
@@ -321,7 +304,6 @@ export const site: SiteContent = {
           url: "https://unmannedunited.com/",
           subtitle: "Completar en content/site.ts",
           context: "Contexto del proyecto Unmanned.",
-          approach: "Tu enfoque y aporte.",
           technologies: ["React", "Visualización"],
           media: projectVideo(
             "/videos/otros/unmanned.webm",
@@ -342,10 +324,9 @@ export const site: SiteContent = {
           title: "Spotify",
           subtitle: "Completar en content/site.ts",
           context: "Contexto del proyecto Spotify.",
-          approach: "Enfoque y aprendizajes.",
           technologies: ["Visualización", "D3"],
           media: projectVideo(
-            "/videos/otros/spotify.webm",
+            "/videos/personales/spotify.webm",
             "Demo del proyecto Spotify",
           ),
         },
@@ -355,8 +336,23 @@ export const site: SiteContent = {
           url: "https://mundial.agustinanahas.com/",
           subtitle: "Visualización interactiva sobre el costo de ser campeón del mundo.",
           context: "¿Cuánto cuesta ser campeón del mundo? es una visualización interactiva sobre el costo de ser campeón del mundo. Es un proyecto que busca informar a la sociedad sobre el costo de ser campeón del mundo y promover la igualdad de género.",
-          approach: "Enfoque y aprendizajes.",
           technologies: ["Visualización", "D3"],
+          media: projectVideo(
+            "/videos/personales/mundial.webm",
+            "Demo del proyecto ¿Cuánto cuesta ser campeón del mundo?",
+          ),
+        },
+        {
+          slug: "alquilista",
+          title: "Alquilista",
+          url: "https://agustinanahas.github.io/el-alquilista/",
+          subtitle: "Visualización interactiva sobre el alquiler en Argentina.",
+          context: "Alquilista es una visualización interactiva sobre el alquiler en Argentina. Es un proyecto que busca informar a la sociedad sobre el alquiler en el país y promover la igualdad de género.",
+          technologies: ["Visualización", "D3"],
+          media: projectVideo(
+            "/videos/personales/alquilista.webm",
+            "Demo del proyecto Alquilista",
+          ),
         },
       ],
     },
@@ -365,15 +361,19 @@ export const site: SiteContent = {
   knowledgeTags: [
     { label: "React", category: "Frontend" },
     { label: "Next.js", category: "Frontend" },
+    { label: "TypeScript", category: "Frontend" },
+    { label: "Tailwind CSS", category: "Frontend" },
+    { label: "Git", category: "Versionado" },
     { label: "Node", category: "Backend" },
     { label: "D3", category: "Visualización" },
     { label: "Mapbox", category: "Visualización" },
     { label: "Scrollama", category: "Narrativa" },
     { label: "PHP", category: "Backend" },
     { label: "Symfony", category: "Backend" },
-    { label: "Laravel", category: "Backend" },
+    { label: "Strapi", category: "Backend" },
     { label: "Python", category: "Backend" },
     { label: "Docker", category: "Infra" },
+    { label: "N8N", category: "Infra" },
     { label: "CI/CD", category: "Infra" },
     { label: "PostgreSQL", category: "Datos" },
     { label: "MySQL", category: "Datos" },
@@ -382,7 +382,7 @@ export const site: SiteContent = {
   interests: [
     {
       title: "Cine y lectura",
-      description: "Voy mucho al cine y leo muchísimo — las historias no se quedan solo en la pantalla del código.",
+      description: "Voy mucho al cine y leo muchísimo. Las historias están en todas partes.",
     },
     {
       title: "Bicicleta y ciudad",
@@ -391,11 +391,6 @@ export const site: SiteContent = {
     {
       title: "Crochet y playlists",
       description: "Tejo crochet y tengo una playlist de Spotify para todo lugar y ocasión.",
-    },
-    {
-      title: "Galileo",
-      description:
-        "Mi mascota se llama Galileo, se autopercibe gatito bebé, tiene 8 años y es gigante.",
     },
   ],
 
@@ -412,7 +407,7 @@ export const site: SiteContent = {
     },
     {
       label: "CV",
-      url: "https://drive.google.com/file/d/1c21TBxq5jyBUAujEoeafKvnjkdJTlMo-/view?usp=sharing",
+      url: "https://drive.google.com/file/d/1vdoQsdETEsShNxslPxht46Ak2NT-7iQl/view?usp=sharing",
       type: "external",
     },
     {
@@ -435,7 +430,7 @@ export const site: SiteContent = {
       src: "/galileo.jpg",
       alt: "Galileo, gato grande de 8 años",
       caption:
-        "Galileo — se autopercibe gatito bebé, tiene 8 años y es gigante.",
+        "Galileo — el que me aprueba todos los PRs.",
       placeholderLabel: "Fotografía editorial",
       placement: "personal",
       width: 3024,

@@ -9,13 +9,16 @@ interface EditorialMediaProps {
   media: MediaItem;
   className?: string;
   showCaption?: boolean;
+  variant?: "default" | "margin";
 }
 
 export function EditorialMedia({
   media,
   className = "",
   showCaption = true,
+  variant = "default",
 }: EditorialMediaProps) {
+  const isMargin = variant === "margin";
   const videoRef = useViewportPlayback(media.type === "video" && Boolean(media.src));
   const showVideo = media.type === "video" && media.src;
   const showImage = media.type === "image" && media.src;
@@ -23,7 +26,9 @@ export function EditorialMedia({
   const isSquare = media.type === "image";
 
   return (
-    <figure className={`${styles.figure} ${className}`}>
+    <figure
+      className={`${styles.figure} ${isMargin ? styles.figureMargin : ""} ${className}`}
+    >
       <div
         className={`${styles.frame} ${isSquare ? styles.frameSquare : styles.frameNatural}`}
       >
@@ -46,7 +51,11 @@ export function EditorialMedia({
             width={media.width ?? 1200}
             height={media.height ?? 800}
             className={styles.image}
-            sizes="(max-width: 1024px) 100vw, 1024px"
+            sizes={
+              isMargin
+                ? "(max-width: 959px) 6rem, 7.5rem"
+                : "(max-width: 1024px) 100vw, 1024px"
+            }
           />
         ) : placeholderSrc ? (
           <Image
@@ -77,8 +86,13 @@ export function EditorialMedia({
       </div>
 
       {showCaption && media.caption && (
-        <figcaption className={styles.caption}>
-          <span className={styles.captionRule} aria-hidden="true" />
+        <figcaption
+          className={isMargin ? styles.captionMargin : styles.caption}
+        >
+          <span
+            className={isMargin ? styles.captionRuleMargin : styles.captionRule}
+            aria-hidden="true"
+          />
           {media.caption}
         </figcaption>
       )}

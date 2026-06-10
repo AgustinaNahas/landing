@@ -94,6 +94,31 @@
   margin-bottom: var(--space-xs);
 }
 
+.figureMargin {
+  max-width: 7.5rem;
+}
+
+.figureMargin .frame {
+  border-color: var(--border-medium);
+}
+
+.captionMargin {
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: none;
+}
+
+.captionRuleMargin {
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--border-medium);
+  margin-bottom: var(--space-xs);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .videoBadge::before {
     content: "Video estático · ";

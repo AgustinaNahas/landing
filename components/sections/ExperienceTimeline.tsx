@@ -35,7 +35,10 @@ export function ExperienceTimeline({
       <div className={styles.layout}>
         <ol className={styles.timeline} aria-label="Línea de tiempo profesional">
           {experience.map((entry, index) => (
-            <Reveal key={`${entry.period}-${entry.organization}`}>
+            <Reveal
+              key={`${entry.period}-${entry.organization}`}
+              className={styles.entryReveal}
+            >
               <li className={styles.entry}>
                 <div className={styles.marker} aria-hidden="true">
                   <span className={styles.dot} />

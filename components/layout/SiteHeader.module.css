@@ -4,6 +4,7 @@
   z-index: 50;
   background: var(--bg);
   border-bottom: 1px solid var(--border-light);
+  isolation: isolate;
 }
 
 .inner {

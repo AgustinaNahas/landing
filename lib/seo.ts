@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { SiteContent } from "@/lib/types";
 
 export function createSiteMetadata(site: SiteContent): Metadata {
-  const { meta, person, links } = site;
+  const { meta, person } = site;
   const siteUrl = meta.siteUrl;
 
   return {

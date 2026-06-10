@@ -5,10 +5,29 @@
   list-style: none;
 }
 
-.item {
+.itemInner {
   display: inline-flex;
   align-items: baseline;
   gap: 0.5rem;
+}
+
+.itemInner .category {
+  opacity: 0;
+  transition: opacity 400ms cubic-bezier(0.25, 0.1, 0.25, 1) 20ms;
+}
+
+.itemInner[data-revealed="true"] .category {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .itemInner .category {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.item {
   padding: 0.375rem 0.75rem;
   border: 1px solid var(--border-light);
   font-size: var(--text-xs);

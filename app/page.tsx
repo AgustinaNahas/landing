@@ -1,6 +1,4 @@
 import { site } from "@/content/site";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ManifestoSection } from "@/components/sections/ManifestoSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { ProjectsSection } from "@/components/sections/ProjectCaseStudy";
@@ -14,13 +12,9 @@ function getNote(attachTo: string) {
 export default function Home() {
   return (
     <main id="contenido" className="readContainer">
-      <HeroSection
+      <AboutSection
         person={site.person}
         contactCta={site.labels.contactCta}
-      />
-      <ManifestoSection manifesto={site.manifesto} />
-      <AboutSection
-        title={site.labels.about}
         about={site.about}
         blockLabels={site.labels.aboutBlocks}
         editorialNote={getNote("about")}

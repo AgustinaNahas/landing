@@ -28,8 +28,8 @@ export function KnowledgeSection({
           {title}
         </h2>
         <p className={styles.intro}>{intro}</p>
-        <KnowledgeTags tags={tags} className={styles.tags} />
       </Reveal>
+      <KnowledgeTags tags={tags} className={styles.tags} />
 
       <EditorialDivider variant="line" className={styles.divider} />
 

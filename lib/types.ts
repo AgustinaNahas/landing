@@ -39,11 +39,6 @@ export interface Person {
   };
 }
 
-export interface Manifesto {
-  quote: string;
-  body: string;
-}
-
 export interface EditorialNoteItem {
   id: string;
   text: string;
@@ -168,7 +163,6 @@ export interface SectionLabels {
 export interface SiteContent {
   meta: SiteMeta;
   person: Person;
-  manifesto: Manifesto;
   labels: SectionLabels;
   footer: { tagline: string };
   ui: { imagePlaceholder: string; videoPlaceholderHint: string };

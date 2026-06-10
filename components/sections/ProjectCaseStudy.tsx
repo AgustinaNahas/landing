@@ -216,7 +216,11 @@ export function ProjectsSection({
   collections,
   editorialNote,
 }: ProjectsSectionProps) {
-  let globalIndex = 0;
+  const collectionOffsets = collections.map((_, index) =>
+    collections
+      .slice(0, index)
+      .reduce((sum, item) => sum + item.projects.length, 0),
+  );
 
   return (
     <section
@@ -240,25 +244,20 @@ export function ProjectsSection({
         </div>
       </Reveal>
 
-      {collections.map((collection, index) => {
-        const offset = globalIndex;
-        globalIndex += collection.projects.length;
-
-        return (
-          <div key={collection.slug}>
-            <ProjectCollectionBlock
-              collection={collection}
-              sectionLabels={sectionLabels}
-              visitProjectLabel={visitProjectLabel}
-              viewAllLabel={viewAllLabel}
-              globalIndexOffset={offset}
-            />
-            {index < collections.length - 1 && (
-              <EditorialDivider variant="dots" />
-            )}
-          </div>
-        );
-      })}
+      {collections.map((collection, index) => (
+        <div key={collection.slug}>
+          <ProjectCollectionBlock
+            collection={collection}
+            sectionLabels={sectionLabels}
+            visitProjectLabel={visitProjectLabel}
+            viewAllLabel={viewAllLabel}
+            globalIndexOffset={collectionOffsets[index]}
+          />
+          {index < collections.length - 1 && (
+            <EditorialDivider variant="dots" />
+          )}
+        </div>
+      ))}
     </section>
   );
 }
