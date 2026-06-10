@@ -10,12 +10,16 @@ interface ExperienceTimelineProps {
   title: string;
   experience: ExperienceEntry[];
   editorialNote?: EditorialNoteItem;
+  timelineAriaLabel: string;
+  editorialNoteAriaLabel: string;
 }
 
 export function ExperienceTimeline({
   title,
   experience,
   editorialNote,
+  timelineAriaLabel,
+  editorialNoteAriaLabel,
 }: ExperienceTimelineProps) {
   return (
     <section
@@ -33,7 +37,7 @@ export function ExperienceTimeline({
       </Reveal>
 
       <div className={styles.layout}>
-        <ol className={styles.timeline} aria-label="Línea de tiempo profesional">
+        <ol className={styles.timeline} aria-label={timelineAriaLabel}>
           {experience.map((entry, index) => (
             <Reveal
               key={`${entry.period}-${entry.organization}`}
@@ -65,7 +69,10 @@ export function ExperienceTimeline({
         {editorialNote && (
           <div className={styles.margin}>
             <Reveal>
-              <EditorialNote text={editorialNote.text} />
+              <EditorialNote
+                text={editorialNote.text}
+                ariaLabel={editorialNoteAriaLabel}
+              />
             </Reveal>
           </div>
         )}

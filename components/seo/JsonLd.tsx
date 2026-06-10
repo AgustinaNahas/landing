@@ -1,7 +1,11 @@
 import { createPersonJsonLd } from "@/lib/seo";
-import { site } from "@/content/site";
+import type { SiteContent } from "@/lib/types";
 
-export function JsonLd() {
+interface JsonLdProps {
+  site: SiteContent;
+}
+
+export function JsonLd({ site }: JsonLdProps) {
   const data = createPersonJsonLd(site);
 
   return (

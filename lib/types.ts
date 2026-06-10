@@ -1,9 +1,21 @@
+export interface AccessibilityLabels {
+  skipToContent: string;
+  mainNav: string;
+  openMenu: string;
+  closeMenu: string;
+  mobileMenu: string;
+  knowledgeTags: string;
+  professionalTimeline: string;
+  editorialNote: string;
+}
+
 export interface SiteMeta {
   title: string;
   description: string;
   siteUrl: string;
   locale: string;
   language: string;
+  jobTitle: string;
   keywords: string[];
   author: string;
   og: {
@@ -22,6 +34,7 @@ export interface SiteMeta {
     description: string;
     image: string;
     imageAlt: string;
+    site?: string;
     creator?: string;
   };
 }
@@ -164,6 +177,7 @@ export interface SiteContent {
   meta: SiteMeta;
   person: Person;
   labels: SectionLabels;
+  accessibility: AccessibilityLabels;
   footer: { tagline: string };
   ui: { imagePlaceholder: string; videoPlaceholderHint: string };
   editorialNotes: EditorialNoteItem[];

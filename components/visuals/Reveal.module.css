@@ -1,23 +1,26 @@
 .reveal {
   --reveal-delay: 0ms;
   --reveal-duration: 600ms;
-  opacity: 0;
+  opacity: 1;
+  transform: none;
   transition:
     opacity var(--reveal-duration) cubic-bezier(0.25, 0.1, 0.25, 1) var(--reveal-delay),
     transform var(--reveal-duration) cubic-bezier(0.25, 0.1, 0.25, 1) var(--reveal-delay);
 }
 
-.defaultVariant {
+.animate.defaultVariant:not(.visible) {
+  opacity: 0;
   transform: translateY(12px);
+}
+
+.animate.dataPoint:not(.visible) {
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
 }
 
 .defaultVariant.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.dataPoint {
-  transform: translateY(6px) scale(0.96);
 }
 
 .dataPoint.visible {

@@ -16,6 +16,13 @@ interface RevealProps {
   duration?: number;
 }
 
+function isInViewport(el: HTMLElement): boolean {
+  const rect = el.getBoundingClientRect();
+  const margin = 40;
+
+  return rect.top < window.innerHeight - margin && rect.bottom > 0;
+}
+
 export function Reveal({
   children,
   className = "",
@@ -25,6 +32,7 @@ export function Reveal({
   duration,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
   const totalDelay =
@@ -43,6 +51,13 @@ export function Reveal({
       return;
     }
 
+    setAnimate(true);
+
+    if (isInViewport(el)) {
+      setRevealed(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -50,7 +65,7 @@ export function Reveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" },
     );
 
     observer.observe(el);
@@ -63,7 +78,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      className={`${styles.reveal} ${variantClass} ${revealed ? styles.visible : ""} ${className}`}
+      className={`${styles.reveal} ${variantClass} ${animate ? styles.animate : ""} ${revealed ? styles.visible : ""} ${className}`}
       data-revealed={revealed || undefined}
       style={
         {

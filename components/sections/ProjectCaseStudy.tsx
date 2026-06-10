@@ -18,6 +18,7 @@ interface ProjectCaseStudyProps {
   globalIndex: number;
   sectionLabels: SectionLabels["projectSections"];
   visitProjectLabel: string;
+  technologiesAriaLabel: string;
 }
 
 const sectionKeys = [
@@ -57,6 +58,7 @@ export function ProjectCaseStudy({
   globalIndex,
   sectionLabels,
   visitProjectLabel,
+  technologiesAriaLabel,
 }: ProjectCaseStudyProps) {
   const mediaOnRight = globalIndex % 2 === 0;
   const hasSplit = Boolean(project.media);
@@ -83,6 +85,7 @@ export function ProjectCaseStudy({
             </h5>
             <KnowledgeTags
               tags={project.technologies.map((label) => ({ label }))}
+              ariaLabel={technologiesAriaLabel}
             />
           </div>
         </Reveal>
@@ -147,6 +150,7 @@ interface ProjectCollectionBlockProps {
   visitProjectLabel: string;
   viewAllLabel: string;
   globalIndexOffset: number;
+  technologiesAriaLabel: string;
 }
 
 function ProjectCollectionBlock({
@@ -155,6 +159,7 @@ function ProjectCollectionBlock({
   visitProjectLabel,
   viewAllLabel,
   globalIndexOffset,
+  technologiesAriaLabel,
 }: ProjectCollectionBlockProps) {
   return (
     <div id={collection.slug} className={styles.collection}>
@@ -187,6 +192,7 @@ function ProjectCollectionBlock({
             globalIndex={globalIndexOffset + index}
             sectionLabels={sectionLabels}
             visitProjectLabel={visitProjectLabel}
+            technologiesAriaLabel={technologiesAriaLabel}
           />
           {index < collection.projects.length - 1 && (
             <EditorialDivider variant="line" className={styles.projectDivider} />
@@ -205,6 +211,7 @@ interface ProjectsSectionProps {
   viewAllLabel: string;
   collections: ProjectCollection[];
   editorialNote?: EditorialNoteItem;
+  technologiesAriaLabel: string;
 }
 
 export function ProjectsSection({
@@ -215,6 +222,7 @@ export function ProjectsSection({
   viewAllLabel,
   collections,
   editorialNote,
+  technologiesAriaLabel,
 }: ProjectsSectionProps) {
   const collectionOffsets = collections.map((_, index) =>
     collections
@@ -252,6 +260,7 @@ export function ProjectsSection({
             visitProjectLabel={visitProjectLabel}
             viewAllLabel={viewAllLabel}
             globalIndexOffset={collectionOffsets[index]}
+            technologiesAriaLabel={technologiesAriaLabel}
           />
           {index < collections.length - 1 && (
             <EditorialDivider variant="dots" />

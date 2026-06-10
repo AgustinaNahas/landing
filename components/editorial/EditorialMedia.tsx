@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import type { MediaItem } from "@/lib/types";
-import { useViewportPlayback } from "./useViewportPlayback";
+import { useLazyVideoPlayback } from "./useViewportPlayback";
 import styles from "./EditorialMedia.module.css";
 
 interface EditorialMediaProps {
@@ -19,31 +19,65 @@ export function EditorialMedia({
   variant = "default",
 }: EditorialMediaProps) {
   const isMargin = variant === "margin";
-  const videoRef = useViewportPlayback(media.type === "video" && Boolean(media.src));
-  const showVideo = media.type === "video" && media.src;
+  const showVideo = media.type === "video" && Boolean(media.src);
+  const { containerRef, videoRef, loaded, staticOnly } = useLazyVideoPlayback(
+    media.src,
+    showVideo,
+  );
   const showImage = media.type === "image" && media.src;
   const placeholderSrc = media.placeholderSrc;
   const isSquare = media.type === "image";
+  const poster = media.poster ?? placeholderSrc;
 
   return (
     <figure
       className={`${styles.figure} ${isMargin ? styles.figureMargin : ""} ${className}`}
     >
       <div
+        ref={showVideo ? containerRef : undefined}
         className={`${styles.frame} ${isSquare ? styles.frameSquare : styles.frameNatural}`}
       >
-        {showVideo ? (
-          <video
-            ref={videoRef}
+        {showVideo && staticOnly && poster ? (
+          <Image
+            src={poster}
+            alt={media.alt}
+            width={1024}
+            height={576}
             className={styles.video}
-            src={media.src}
-            poster={media.poster ?? placeholderSrc}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-label={media.alt}
+            sizes={
+              isMargin
+                ? "(max-width: 959px) 6rem, 7.5rem"
+                : "(max-width: 1024px) 100vw, 1024px"
+            }
           />
+        ) : showVideo ? (
+          <>
+            {!loaded && poster && (
+              <Image
+                src={poster}
+                alt=""
+                aria-hidden
+                width={1024}
+                height={576}
+                className={`${styles.video} ${styles.videoPoster}`}
+                sizes={
+                  isMargin
+                    ? "(max-width: 959px) 6rem, 7.5rem"
+                    : "(max-width: 1024px) 100vw, 1024px"
+                }
+              />
+            )}
+            <video
+              ref={videoRef}
+              className={`${styles.video} ${loaded ? styles.videoReady : styles.videoHidden}`}
+              poster={poster}
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-label={media.alt}
+            />
+          </>
         ) : showImage ? (
           <Image
             src={media.src!}
@@ -76,12 +110,6 @@ export function EditorialMedia({
               <span className={styles.fallbackHint}>{media.placeholderHint}</span>
             )}
           </div>
-        )}
-
-        {media.type === "video" && !media.src && (
-          <span className={styles.videoBadge} aria-hidden="true">
-            ▶ Autoplay al entrar en pantalla
-          </span>
         )}
       </div>
 

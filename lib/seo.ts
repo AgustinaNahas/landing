@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
 import type { SiteContent } from "@/lib/types";
+import type { Locale } from "@/lib/locale";
+import { getLocalePath } from "@/lib/locale";
 
-export function createSiteMetadata(site: SiteContent): Metadata {
+export function createSiteMetadata(site: SiteContent, locale: Locale): Metadata {
   const { meta, person } = site;
-  const siteUrl = meta.siteUrl;
+  const siteUrl = meta.siteUrl.replace(/\/$/, "");
+  const canonicalPath = getLocalePath(locale);
+  const canonical = canonicalPath === "/" ? siteUrl : `${siteUrl}${canonicalPath}`;
+  const alternateLocale = locale === "es" ? "en_US" : "es_AR";
+  const shareImage = {
+    url: meta.og.image,
+    width: meta.og.imageWidth,
+    height: meta.og.imageHeight,
+    alt: meta.og.imageAlt,
+    type: "image/jpeg" as const,
+  };
 
   return {
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(`${siteUrl}/`),
+    applicationName: meta.og.siteName,
     title: {
       default: meta.title,
       template: `%s · ${person.name}`,
@@ -18,7 +31,12 @@ export function createSiteMetadata(site: SiteContent): Metadata {
     publisher: meta.author,
     category: "technology",
     alternates: {
-      canonical: siteUrl,
+      canonical,
+      languages: {
+        es: siteUrl,
+        en: `${siteUrl}/en/`,
+        "x-default": siteUrl,
+      },
     },
     robots: {
       index: true,
@@ -34,35 +52,24 @@ export function createSiteMetadata(site: SiteContent): Metadata {
     openGraph: {
       type: meta.og.type,
       locale: meta.locale,
-      url: siteUrl,
+      alternateLocale: [alternateLocale],
+      url: canonical,
       siteName: meta.og.siteName,
       title: meta.og.title,
       description: meta.og.description,
-      images: [
-        {
-          url: meta.og.image,
-          width: meta.og.imageWidth,
-          height: meta.og.imageHeight,
-          alt: meta.og.imageAlt,
-          type: "image/jpeg",
-        },
-      ],
+      images: [shareImage],
     },
     twitter: {
       card: meta.twitter.card,
+      site: meta.twitter.site,
+      creator: meta.twitter.creator,
       title: meta.twitter.title,
       description: meta.twitter.description,
-      images: {
-        url: meta.twitter.image,
-        alt: meta.twitter.imageAlt,
-      },
-      creator: meta.twitter.creator,
-    },
-    other: {
-      "og:locale:alternate": "en_US",
+      images: shareImage,
     },
     icons: {
       icon: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.webmanifest",
   };
@@ -92,9 +99,9 @@ export function createPersonJsonLd(site: SiteContent) {
         "@id": `${meta.siteUrl}/#person`,
         name: person.name,
         url: meta.siteUrl,
-        image: `${meta.siteUrl}${meta.og.image}`,
+        image: `${meta.siteUrl.replace(/\/$/, "")}${meta.og.image}`,
         description: person.role,
-        jobTitle: "Desarrolladora frontend",
+        jobTitle: meta.jobTitle,
         knowsAbout: meta.keywords,
         sameAs,
       },

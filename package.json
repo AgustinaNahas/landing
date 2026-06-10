@@ -7,7 +7,8 @@
     "build": "next build",
     "preview:static": "npx serve@latest out",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "optimize:videos": "bash scripts/optimize-videos.sh"
   },
   "dependencies": {
     "next": "16.2.9",

@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import { site } from "@/content/site";
+import { getSiteContent } from "@/content/index";
 import { createSiteMetadata } from "@/lib/seo";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -19,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = createSiteMetadata(site);
+export const metadata: Metadata = createSiteMetadata(getSiteContent("es"), "es");
 
 export const viewport: Viewport = {
   themeColor: "#F7F4EE",
@@ -34,16 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={site.meta.language} className={`${fraunces.variable} ${inter.variable}`}>
-      <body>
-        <JsonLd />
-        <a href="#contenido" className="skipLink">
-          Saltar al contenido
-        </a>
-        <SiteHeader name={site.person.name} navigation={site.navigation} />
-        {children}
-        <SiteFooter name={site.person.name} tagline={site.footer.tagline} />
-      </body>
+    <html
+      lang={getSiteContent("es").meta.language}
+      className={`${fraunces.variable} ${inter.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

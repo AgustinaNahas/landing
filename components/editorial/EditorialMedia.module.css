@@ -13,6 +13,10 @@
   background: var(--bg);
 }
 
+.frame:has(.videoHidden) {
+  min-height: 0;
+}
+
 .frameSquare {
   aspect-ratio: 1 / 1;
 }
@@ -35,6 +39,29 @@
   height: auto;
   display: block;
   vertical-align: top;
+}
+
+.videoPoster {
+  position: relative;
+  z-index: 1;
+}
+
+.videoHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.videoReady {
+  position: relative;
+  z-index: 2;
+}
+
+.frame:has(.videoReady) .videoPoster {
+  display: none;
 }
 
 .fallback {

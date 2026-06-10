@@ -12,6 +12,7 @@ interface KnowledgeSectionProps {
   interestsLabel: string;
   tags: KnowledgeTag[];
   interests: Interest[];
+  tagsAriaLabel: string;
 }
 
 export function KnowledgeSection({
@@ -20,6 +21,7 @@ export function KnowledgeSection({
   interestsLabel,
   tags,
   interests,
+  tagsAriaLabel,
 }: KnowledgeSectionProps) {
   return (
     <section className={styles.section} aria-labelledby="knowledge-title">
@@ -29,7 +31,11 @@ export function KnowledgeSection({
         </h2>
         <p className={styles.intro}>{intro}</p>
       </Reveal>
-      <KnowledgeTags tags={tags} className={styles.tags} />
+      <KnowledgeTags
+        tags={tags}
+        className={styles.tags}
+        ariaLabel={tagsAriaLabel}
+      />
 
       <EditorialDivider variant="line" className={styles.divider} />
 

@@ -1,13 +1,22 @@
-import type { NavItem } from "@/lib/types";
+import type { AccessibilityLabels, NavItem } from "@/lib/types";
+import type { Locale } from "@/lib/locale";
 import { ReadingProgress } from "@/components/layout/ReadingProgress";
+import { SiteNav } from "@/components/layout/SiteNav";
 import styles from "./SiteHeader.module.css";
 
 interface SiteHeaderProps {
   name: string;
   navigation: NavItem[];
+  locale: Locale;
+  accessibility: AccessibilityLabels;
 }
 
-export function SiteHeader({ name, navigation }: SiteHeaderProps) {
+export function SiteHeader({
+  name,
+  navigation,
+  locale,
+  accessibility,
+}: SiteHeaderProps) {
   return (
     <header className={styles.header}>
       <ReadingProgress />
@@ -15,17 +24,11 @@ export function SiteHeader({ name, navigation }: SiteHeaderProps) {
         <a href="#" className={styles.name}>
           {name}
         </a>
-        <nav className={styles.nav} aria-label="Navegación principal">
-          <ul className={styles.navList}>
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} className={styles.navLink}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <SiteNav
+          navigation={navigation}
+          locale={locale}
+          accessibility={accessibility}
+        />
       </div>
     </header>
   );

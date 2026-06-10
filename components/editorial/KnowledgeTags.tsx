@@ -7,11 +7,12 @@ import styles from "./KnowledgeTags.module.css";
 interface KnowledgeTagsProps {
   tags: KnowledgeTag[];
   className?: string;
+  ariaLabel: string;
 }
 
-export function KnowledgeTags({ tags, className = "" }: KnowledgeTagsProps) {
+export function KnowledgeTags({ tags, className = "", ariaLabel }: KnowledgeTagsProps) {
   return (
-    <ul className={`${styles.list} ${className}`} aria-label="Etiquetas de conocimiento">
+    <ul className={`${styles.list} ${className}`} aria-label={ariaLabel}>
       {tags.map((tag, index) => (
         <li key={tag.label} className={styles.item}>
           <Reveal

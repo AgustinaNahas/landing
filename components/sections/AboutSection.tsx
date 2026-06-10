@@ -20,6 +20,7 @@ interface AboutSectionProps {
   about: About;
   blockLabels: SectionLabels["aboutBlocks"];
   editorialNote?: EditorialNoteItem;
+  editorialNoteAriaLabel: string;
   images?: EditorialImageItem[];
 }
 
@@ -37,6 +38,7 @@ export function AboutSection({
   about,
   blockLabels,
   editorialNote,
+  editorialNoteAriaLabel,
   images = [],
 }: AboutSectionProps) {
   const personalImages = images.filter((item) => item.placement === "personal");
@@ -113,7 +115,10 @@ export function AboutSection({
 
         {editorialNote && (
           <Reveal className={styles.degreeMargin}>
-            <EditorialNote text={editorialNote.text} />
+            <EditorialNote
+              text={editorialNote.text}
+              ariaLabel={editorialNoteAriaLabel}
+            />
           </Reveal>
         )}
       </div>

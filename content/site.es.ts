@@ -4,6 +4,7 @@ function projectVideo(src: string, alt: string): MediaItem {
   return {
     type: "video",
     src,
+    poster: src.replace(/\.webm$/, ".poster.webp"),
     alt,
     caption: "",
     placeholderLabel: alt,
@@ -19,6 +20,7 @@ export const site: SiteContent = {
     siteUrl: "https://agustinanahas.com",
     locale: "es_AR",
     language: "es-AR",
+    jobTitle: "Desarrolladora frontend",
     author: "Agustina Nahas",
     keywords: [
       "Agustina Nahas",
@@ -38,10 +40,10 @@ export const site: SiteContent = {
       title: "Agustina Nahas — Desarrolladora frontend",
       description:
         "Construyo experiencias digitales que ayudan a comprender información compleja. Visualizaciones, mapas interactivos y narrativas con código.",
-      image: "/perfil.jpg",
+      image: "/og.jpg",
       imageAlt: "Agustina Nahas — desarrolladora frontend",
-      imageWidth: 2231,
-      imageHeight: 2231,
+      imageWidth: 1200,
+      imageHeight: 630,
       siteName: "Agustina Nahas",
       type: "website",
     },
@@ -50,8 +52,10 @@ export const site: SiteContent = {
       title: "Agustina Nahas — Desarrolladora frontend",
       description:
         "Visualización de datos, mapas, scrollytellings y proyectos con impacto social.",
-      image: "/perfil.jpg",
+      image: "/og.jpg",
       imageAlt: "Agustina Nahas — desarrolladora frontend",
+      site: "@AgustinaNahas",
+      creator: "@AgustinaNahas",
     },
   },
 
@@ -118,6 +122,17 @@ export const site: SiteContent = {
     tagline: "Siempre hay una historia buscando ser contada.",
   },
 
+  accessibility: {
+    skipToContent: "Saltar al contenido",
+    mainNav: "Navegación principal",
+    openMenu: "Abrir menú",
+    closeMenu: "Cerrar menú",
+    mobileMenu: "Menú de navegación",
+    knowledgeTags: "Etiquetas de conocimiento",
+    professionalTimeline: "Línea de tiempo profesional",
+    editorialNote: "Nota editorial",
+  },
+
   ui: {
     imagePlaceholder: "Fotografía editorial",
     videoPlaceholderHint: "Video animado · autoplay al entrar en pantalla",
@@ -176,7 +191,7 @@ export const site: SiteContent = {
           url: "https://www.childatlas.org/",
           subtitle: "Portal de datos sobre la situación mundial de niños y niñas para Save The Children.",
           context:
-            "Child Atlas es un portal de datos sobre la situación mundial de niños y niñas para Save The Children. Es un proyecto que busca informar a la sociedad sobre la situación de los niños y niñas en el mundo y promover la protección de sus derechos.",
+            "Desde Save The Children nos propusieron generar un portal de datos sobre la situación mundial de niños y niñas para informar a la sociedad sobre la situación de los niños y niñas en el mundo y promover la protección de sus derechos. Generamos una home, un atlas interactivo y perfiles de paises para ver más de 100 indicadores sobre la situación de los niños y niñas en el mundo.",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/child-atlas.webm",
@@ -187,8 +202,8 @@ export const site: SiteContent = {
           slug: "escuelas",
           title: "Escuelas",
           url: "https://fractalargentina.org/herramienta/mapa-de-accesibilidad-a-las-escuelas-argentinas/",
-          subtitle: "Mapa interactivo de accesibilidad escolar en Argentina.  ",
-          context: "Escuelas es un mapa interactivo de accesibilidad escolar en Argentina. Es un proyecto que busca informar a la sociedad sobre la accesibilidad de las escuelas en el país y promover la mejora de la accesibilidad.",
+          subtitle: "Mapa interactivo de accesibilidad a instituciones educativas en Argentina.",
+          context: "Desde Fractal (una división de la Fundación B&B) buscaban informar a la sociedad sobre el tiempo de viaje que tienen los niños y niñas para llegar a las escuelas en el país y promover la mejora de la accesibilidad hacia los establecimientos educativos.",
           technologies: ["React", "Next.js", "Mapbox"],
           media: projectVideo(
             "/videos/sociopublico/escuelas.webm",
@@ -200,7 +215,7 @@ export const site: SiteContent = {
           title: "GWL",
           url: "https://gwlvoices.org/",
           subtitle: "Scrollytelling interactivo sobre el rol de las mujeres en organizacione multilaterales.",
-          context: "Scrollytelling interactivo sobre el rol de las mujeres en organizacione multilaterales para la organización GWL. Es un proyecto que busca informar a la sociedad sobre el rol de las mujeres en las organizaciones multilaterales y promover la igualdad de género.",
+          context: "Desde GWL nos propusieron generar un scrollytelling interactivo que permitiera contar la historia de las mujeres en las organizaciones multilaterales de manera visual y dinámica. ",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/gwl.webm",
@@ -211,7 +226,7 @@ export const site: SiteContent = {
           slug: "nido",
           title: "Nido",
           subtitle: "Scrollytelling interactivo sobre el índice NIDO.",
-          context: "Nido es un scrollytelling interactivo sobre el índice NIDO. Es un proyecto que busca informar a la sociedad sobre el índice NIDO y promover la mejora de la educación en el país.",
+          context: "Desde Fractal (una división de la Fundación B&B) nos propusieron generar un scrollytelling interactivo que permitiera contar la historia del índice NIDO de manera visual y dinámica. El índice NIDO es un índice que mide cuatro dimensiones: acceso a la educación, salud, acceso a espacios verdes y contexto. A través de este scrollytelling, pudimos contar la historia de cada una de estas dimensiones y cómo este índice se relaciona con la vida cotidiana de los niños y niñas en el país.",
           technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/sociopublico/nido.webm",
@@ -234,7 +249,7 @@ export const site: SiteContent = {
           url: "https://chicasentecnologia.org/futuro-programado/",
           subtitle: "Scrollytelling interactivo sobre mujeres en el mundo de la tecnología.",
           context:
-            "Una de las piezas que más disfrutaste en El Gato y La Caja — qué historia contaba y por qué te marcó.",
+            "Desde CET nos propusieron generar un scrollytelling interactivo que permitiera analizar la situación de las mujeres en el mundo de la tecnología, y entender de dónde sale la brecha de género de las mujeres en STEM. Disfruté muchísimo este proyecto por lo importante que me parece como mujer en tecnología seguir incentivando a más mujeres a seguir esta carrera.",
           technologies: ["D3", "Scrollama", "React"],
           media: projectVideo(
             "/videos/eglc/cet.webm",
@@ -245,8 +260,8 @@ export const site: SiteContent = {
           slug: "clacai",
           title: "CLACAI",
           url: "https://leyes-y-sombras.clacai.org/",
-          subtitle: "Completar en content/site.ts",
-          context: "Contexto del proyecto CLACAI.",
+          subtitle: "Scrollytelling interactivo sobre el acceso al derecho al aborto en Latinoamérica.",
+          context: "Desde CLACAI nos propusieron generar un scrollytelling interactivo que permitiera analizar la situación del acceso al derecho al aborto en Latinoamérica. Es un proyecto que busca conocer los matices del acceso al aborto en cada país de la región.",
           technologies: ["Mapbox", "React", "Storytelling"],
           media: projectVideo(
             "/videos/eglc/clacai.webm",
@@ -255,11 +270,11 @@ export const site: SiteContent = {
         },
         {
           slug: "fundar",
-          title: "Fundar",
+          title: "Complejidad Económica Verde",
           url: "https://complejidadeconomicaverde.fund.ar/",
-          subtitle: "Completar en content/site.ts",
-          context: "Contexto del proyecto Fundar.",
-          technologies: ["D3", "Node", "Visualización"],
+          subtitle: "Scrollytelling interactivo sobre una propuesta económica verde para Argentina.",
+          context: "Desde Fundar buscaban generar un scrollytelling interactivo que permitiera contar la historia de una propuesta económica verde para Argentina. Es una propuesta económica para que Argentina pueda desarrollarse industrialmente en productos que sean sustentables pero que aparte tengan una complejidad asequible en función de la capacidad industrial actual.",
+          technologies: ["D3", "Node", "React"],
           media: projectVideo(
             "/videos/eglc/fundar.webm",
             "Demo del proyecto Fundar en El Gato y La Caja",
@@ -270,8 +285,8 @@ export const site: SiteContent = {
           title: "La Poderosa",
           url: "https://lapoderosa.elgatoylacaja.com/",
           subtitle: "Scrollytelling interactivo sobre accesos a servicios en barrios vulnerables.",
-          context: "Contexto del proyecto La Poderosa.",
-          technologies: ["React", "Scrollama", "Storytelling"],
+          context: "En La Poderosa hicieron un análisis sobre el acceso a servicios básicos en barrios vulnerables del país y nos propusieron generar un scrollytelling interactivo que permitiera contar esta historia de manera visual y dinámica. ",
+          technologies: ["React", "Scrollama", "D3"],
           media: projectVideo(
             "/videos/eglc/lapoderosa.webm",
             "Demo del proyecto La Poderosa en El Gato y La Caja",
@@ -284,15 +299,15 @@ export const site: SiteContent = {
       title: "Otros",
       subtitle: "Proyectos con otros equipos y clientes",
       intro:
-        "Trabajos que no entran en las otras categorías pero que igual disfruté mucho hacer.",
+        "Proyectos que no entran en las otras categorías pero que igual disfruté mucho hacer.",
       projects: [
         {
           slug: "ldc",
           title: "LDC",
           url: "https://desupernova.github.io/ldc-graduates/",
-          subtitle: "Completar en content/site.ts",
-          context: "Contexto del proyecto.",
-          technologies: ["React", "Node"],
+          subtitle: "Visualización interactiva para aprender sobre el marco Cynefin.",
+          context: "Junto con De Supernova, construimos una visualización interactiva para aprender sobre el marco Cynefin. Es un proyecto que busca informar a la sociedad sobre el marco Cynefin y promover la mejora de la gestión de proyectos.",
+          technologies: ["React", "Next.js", "D3"],
           media: projectVideo(
             "/videos/otros/ldc.webm",
             "Demo del proyecto LDC",
@@ -302,9 +317,9 @@ export const site: SiteContent = {
           slug: "unmanned",
           title: "Unmanned",
           url: "https://unmannedunited.com/",
-          subtitle: "Completar en content/site.ts",
-          context: "Contexto del proyecto Unmanned.",
-          technologies: ["React", "Visualización"],
+          subtitle: "Landing del proyecto Unmanned United.",
+          context: "Unmanned United es una empresa de ingeniería de drones. Construí su landing page para presentar su trabajo y servicios.",
+          technologies: ["React", "Next.js", "Tailwind CSS", "Docker"],
           media: projectVideo(
             "/videos/otros/unmanned.webm",
             "Demo del proyecto Unmanned",
@@ -322,8 +337,9 @@ export const site: SiteContent = {
         {
           slug: "spotify",
           title: "Spotify",
-          subtitle: "Completar en content/site.ts",
-          context: "Contexto del proyecto Spotify.",
+          url: "https://agustinanahas.github.io/spotify-wrapped/",
+          subtitle: "Visualización interactiva sobre la música que escucho.",
+          context: "No confiaba mucho en el Spotify Wrapped, y decidí hacer mis propias visualizaciones. Me bajé la data de spotify y generé visualizaciones sobre la música que escucho que Spotify no me hubiese ofrecido de otra manera.",
           technologies: ["Visualización", "D3"],
           media: projectVideo(
             "/videos/personales/spotify.webm",
@@ -335,7 +351,7 @@ export const site: SiteContent = {
           title: "¿Cuánto cuesta ser campeón del mundo?",
           url: "https://mundial.agustinanahas.com/",
           subtitle: "Visualización interactiva sobre el costo de ser campeón del mundo.",
-          context: "¿Cuánto cuesta ser campeón del mundo? es una visualización interactiva sobre el costo de ser campeón del mundo. Es un proyecto que busca informar a la sociedad sobre el costo de ser campeón del mundo y promover la igualdad de género.",
+          context: "¿Cuánto cuesta ser campeón del mundo? es una visualización interactiva sobre el costo de vida cuando Argentina salió campeón del mundo vs en este mundial (2026).",
           technologies: ["Visualización", "D3"],
           media: projectVideo(
             "/videos/personales/mundial.webm",
@@ -347,7 +363,7 @@ export const site: SiteContent = {
           title: "Alquilista",
           url: "https://agustinanahas.github.io/el-alquilista/",
           subtitle: "Visualización interactiva sobre el alquiler en Argentina.",
-          context: "Alquilista es una visualización interactiva sobre el alquiler en Argentina. Es un proyecto que busca informar a la sociedad sobre el alquiler en el país y promover la igualdad de género.",
+          context: "Alquilista es una visualización interactiva sobre el alquiler en Argentina en 2024. Se busca analizar la capacidad de alquilar un depto en CABA en función de los sueldos en Argentina.",
           technologies: ["Visualización", "D3"],
           media: projectVideo(
             "/videos/personales/alquilista.webm",
@@ -413,6 +429,11 @@ export const site: SiteContent = {
     {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/agustina-nahas/",
+      type: "social",
+    },
+    {
+      label: "Twitter",
+      url: "https://x.com/AgusNahas_",
       type: "social",
     },
   ],

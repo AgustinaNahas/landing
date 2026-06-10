@@ -1,15 +1,17 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
+import { siteEs } from "@/content/index";
 
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = siteEs.meta.siteUrl.replace(/\/$/, "");
+
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${site.meta.siteUrl}/sitemap.xml`,
-    host: site.meta.siteUrl,
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }
